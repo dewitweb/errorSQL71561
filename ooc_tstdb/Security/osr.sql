@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [osr]
+    AUTHORIZATION [dbo];
+

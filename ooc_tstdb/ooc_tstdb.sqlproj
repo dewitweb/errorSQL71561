@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ooc_tstdb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b1cc3adb-03d9-4c0e-8343-37bdad802dfb}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ooc_tstdb</RootNamespace>
+    <AssemblyName>ooc_tstdb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="sub\" />
+    <Folder Include="sub\Tables\" />
+    <Folder Include="hrs\" />
+    <Folder Include="hrs\Tables\" />
+    <Folder Include="stip\" />
+    <Folder Include="stip\Tables\" />
+    <Folder Include="auth\" />
+    <Folder Include="auth\Tables\" />
+    <Folder Include="ait\" />
+    <Folder Include="ait\Tables\" />
+    <Folder Include="eml\" />
+    <Folder Include="eml\Tables\" />
+    <Folder Include="osr\" />
+    <Folder Include="osr\Tables\" />
+    <Folder Include="evc\" />
+    <Folder Include="evc\Tables\" />
+    <Folder Include="evcwv\" />
+    <Folder Include="evcwv\Tables\" />
+    <Folder Include="his\" />
+    <Folder Include="his\Tables\" />
+    <Folder Include="crm\" />
+    <Folder Include="crm\Views\" />
+    <Folder Include="sub\Views\" />
+    <Folder Include="evcwv\Views\" />
+    <Folder Include="ait\Views\" />
+    <Folder Include="stip\Views\" />
+    <Folder Include="auth\Views\" />
+    <Folder Include="evc\Views\" />
+    <Folder Include="hrs\Views\" />
+    <Folder Include="osr\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="sub\Functions\" />
+    <Folder Include="eml\Functions\" />
+    <Folder Include="ait\Functions\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="sub\Stored Procedures\" />
+    <Folder Include="auth\Stored Procedures\" />
+    <Folder Include="eml\Stored Procedures\" />
+    <Folder Include="osr\Stored Procedures\" />
+    <Folder Include="evc\Stored Procedures\" />
+    <Folder Include="ait\Stored Procedures\" />
+    <Folder Include="stip\Stored Procedures\" />
+    <Folder Include="hrs\Stored Procedures\" />
+    <Folder Include="evcwv\Stored Procedures\" />
+    <Folder Include="his\Stored Procedures\" />
+    <Folder Include="sub\User Defined Types\" />
+    <Folder Include="stip\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="sub\Tables\tblDeclaration_Search.sql" />
+    <Build Include="hrs\Tables\tblContactPerson.sql" />
+    <Build Include="sub\Tables\tblCourse.sql" />
+    <Build Include="stip\Tables\tblDeclaration_BPV.sql" />
+    <Build Include="sub\Tables\tblNewsItem.sql" />
+    <Build Include="sub\Tables\tblSubsidyScheme_ExtraRights.sql" />
+    <Build Include="sub\Tables\tblNewsItem_SubsidyScheme.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Investigation.sql" />
+    <Build Include="sub\Tables\tblPaymentRun.sql" />
+    <Build Include="sub\Tables\tblRepServ_08_Snapshot_Details.sql" />
+    <Build Include="sub\Tables\tblEmployer_ParentChild_Request.sql" />
+    <Build Include="sub\Tables\tblPaymentRun_XMLExport.sql" />
+    <Build Include="sub\Tables\tblEmployer_ParentChild_Request_Attachment.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Specification.sql" />
+    <Build Include="sub\Tables\tblEmployer_ParentChild.sql" />
+    <Build Include="sub\Tables\tblImportLog.sql" />
+    <Build Include="auth\Tables\tblUser_Password_Change.sql" />
+    <Build Include="sub\Tables\tblApplicationSetting_Extended.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Rejection.sql" />
+    <Build Include="sub\Tables\tblCourse_IsEligible.sql" />
+    <Build Include="sub\Tables\tblRepServ_08_Snapshot.sql" />
+    <Build Include="sub\Tables\tblJournalEntryCode.sql" />
+    <Build Include="sub\Tables\tblDeclaration.sql" />
+    <Build Include="sub\Tables\tblEducation_IsEligible.sql" />
+    <Build Include="ait\Tables\tblLog.sql" />
+    <Build Include="hrs\Tables\tblDeclaration_OSR2019_NewInserted.sql" />
+    <Build Include="sub\Tables\tblLedgerExtraRights.sql" />
+    <Build Include="ait\Tables\tblEmailAndIBANChange.sql" />
+    <Build Include="ait\Tables\tblZipcode_RPIName.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Attachment.sql" />
+    <Build Include="hrs\Tables\tblInstituteEtalage.sql" />
+    <Build Include="sub\Tables\tblEducation.sql" />
+    <Build Include="auth\Tables\tblUserValidation.sql" />
+    <Build Include="auth\Tables\tblApplication.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Extension.sql" />
+    <Build Include="auth\Tables\tblUser_Role_SubsidyScheme.sql" />
+    <Build Include="auth\Tables\tblUser.sql" />
+    <Build Include="hrs\Tables\tblBPV_DTG.sql" />
+    <Build Include="auth\Tables\tblUser_Email_Change.sql" />
+    <Build Include="hrs\Tables\tblDeclaration_Course.sql" />
+    <Build Include="ait\Tables\tblExactData_XML.sql" />
+    <Build Include="hrs\Tables\tblIBAN.sql" />
+    <Build Include="sub\Tables\tblSubsidyScheme_Institute.sql" />
+    <Build Include="hrs\Tables\tblEVC.sql" />
+    <Build Include="sub\Tables\tblUser_Role_Employer.sql" />
+    <Build Include="auth\Tables\tblPermission.sql" />
+    <Build Include="sub\Tables\tblEmployer_IBAN_Change.sql" />
+    <Build Include="hrs\Tables\tblPaymentExact.sql" />
+    <Build Include="sub\Tables\tblMentor.sql" />
+    <Build Include="stip\Tables\tblDeclaration.sql" />
+    <Build Include="sub\Tables\tblLedger.sql" />
+    <Build Include="auth\Tables\tblUser_Role.sql" />
+    <Build Include="stip\Tables\tblDeclaration_Mentor.sql" />
+    <Build Include="eml\Tables\tblEmailTemplate.sql" />
+    <Build Include="sub\Tables\tblEducation_Institute.sql" />
+    <Build Include="auth\Tables\tblRole_Permission.sql" />
+    <Build Include="ait\Tables\tblDropCreateFKs.sql" />
+    <Build Include="stip\Tables\tblEmail_Partition.sql" />
+    <Build Include="eml\Tables\tblEmailSetting.sql" />
+    <Build Include="sub\Tables\tblEmployer.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Partition.sql" />
+    <Build Include="eml\Tables\tblEmail.sql" />
+    <Build Include="auth\Tables\tblUserLoginStatus.sql" />
+    <Build Include="sub\Tables\tblJournalEntryCode_Temp.sql" />
+    <Build Include="sub\Tables\tblApplicationPage.sql" />
+    <Build Include="sub\Tables\tblPaymentRun_Declaration.sql" />
+    <Build Include="hrs\Tables\tblDeclaration_OSR2019.sql" />
+    <Build Include="sub\Tables\tblNewsItem_NewsItemPage.sql" />
+    <Build Include="eml\Tables\tblEmailAttachment.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Email_User.sql" />
+    <Build Include="osr\Tables\tblDeclaration.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Employee.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Employee_ReversalPayment.sql" />
+    <Build Include="evc\Tables\tblDeclaration.sql" />
+    <Build Include="hrs\Tables\tblDeclaration_HorusNr_OTIBDSID.sql" />
+    <Build Include="sub\Tables\tblNewsItem_ApplicationPage.sql" />
+    <Build Include="sub\Tables\tblDeclaration_ReversalPayment.sql" />
+    <Build Include="hrs\Tables\tblBPV.sql" />
+    <Build Include="sub\Tables\tblDeclarationEmail_Attachment.sql" />
+    <Build Include="sub\Tables\tblEmployee.sql" />
+    <Build Include="sub\Tables\tblEmployer_Subsidy.sql" />
+    <Build Include="ait\Tables\tblMaintenance.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Unknown_Source.sql" />
+    <Build Include="sub\Tables\tblEmployer_Subsidy_GracePeriod.sql" />
+    <Build Include="sub\Tables\tblEducation_NominalDuration_History.sql" />
+    <Build Include="sub\Tables\tblSubsidyScheme.sql" />
+    <Build Include="sub\Tables\tblEmployee_Voucher.sql" />
+    <Build Include="hrs\Tables\tblWGR.sql" />
+    <Build Include="sub\Tables\tblEmployer_Subsidy_GracePeriod_Email.sql" />
+    <Build Include="evcwv\Tables\tblDeclaration.sql" />
+    <Build Include="sub\Tables\tblEmployee_ScopeOfEmployment.sql" />
+    <Build Include="sub\Tables\tblEmployer_Employee.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Email.sql" />
+    <Build Include="auth\Tables\tblRole.sql" />
+    <Build Include="sub\Tables\tblEncryptedSetting.sql" />
+    <Build Include="auth\Tables\tblUserLoginStatus_History.sql" />
+    <Build Include="hrs\Tables\tblDeclarationRow_OSR2019.sql" />
+    <Build Include="his\Tables\tblHistory.sql" />
+    <Build Include="hrs\Tables\tblVoucher.sql" />
+    <Build Include="hrs\Tables\tblVoucher_Used.sql" />
+    <Build Include="sub\Tables\tblPaymentArrear.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Partition_ReversalPayment.sql" />
+    <Build Include="sub\Tables\tblInstitute.sql" />
+    <Build Include="evcwv\Tables\tblParticipant.sql" />
+    <Build Include="sub\Tables\tblEmployer_IBAN_Change_Attachment.sql" />
+    <Build Include="ait\Tables\tblErrorLog.sql" />
+    <Build Include="sub\Tables\tblDeclaration_Partition_Voucher.sql" />
+    <Build Include="ait\Tables\tblExecutedProcedure.sql" />
+    <Build Include="ait\Tables\tblAnonimizer.sql" />
+    <Build Include="sub\Tables\tblApplicationPage_Permission.sql" />
+    <Build Include="sub\Tables\tblEmployer_PaymentStop.sql" />
+    <Build Include="sub\Tables\tblApplicationSetting_Role.sql" />
+    <Build Include="sub\Tables\tblApplicationSetting.sql" />
+    <Build Include="auth\Tables\tblLoginFailed.sql" />
+    <None Include="crm\Views\viewEmployee_MNData_MostRecent.sql" />
+    <None Include="crm\Views\viewEmployer_Employee_MNData_All.sql" />
+    <Build Include="sub\Views\viewDeclaration_FirstPartition.sql" />
+    <Build Include="evcwv\Views\viewApplicationSetting_OutflowPossibility.sql" />
+    <None Include="ait\Views\viewDeclaration_Unknown_Source_Control.sql" />
+    <None Include="crm\Views\viewEmployer_MNData_MostRecent.sql" />
+    <Build Include="sub\Views\viewDeclaration_Partition_TotalVoucherAmount.sql" />
+    <None Include="crm\Views\viewEmployer_Employee_MNData_ActiveOnly.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_OTIB_Dashboard_KPI_Header.sql" />
+    <Build Include="ait\Views\viewMonthNameShortByLanguage.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_SubsidyAmountPerEmployer.sql" />
+    <Build Include="stip\Views\viewRepServ_STIP_Commitments.sql" />
+    <Build Include="sub\Views\viewDeclaration_TotalPaidAmount.sql" />
+    <None Include="crm\Views\viewPaymentArrear_CRM.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_IBANChangeStatus.sql" />
+    <None Include="crm\Views\viewEmployment_CRM.sql" />
+    <None Include="crm\Views\viewEmployer_CRM.sql" />
+    <Build Include="sub\Views\viewDeclaration_Employee_Amount.sql" />
+    <None Include="crm\Views\viewEmployee_CRM.sql" />
+    <Build Include="sub\Views\viewPaymentRun_Declaration.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_PartitionStatus.sql" />
+    <Build Include="auth\Views\viewEmployersLoginHistory.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_SubsidyAmountPerEmployee.sql" />
+    <Build Include="sub\Views\viewEmployerEmail.sql" />
+    <Build Include="sub\Views\viewDeclaration_LastPartition.sql" />
+    <Build Include="auth\Views\viewUsersValidated.sql" />
+    <None Include="crm\Views\viewEmployee_MNData_All.sql" />
+    <Build Include="sub\Views\viewDeclaration_TotalPaidAmount_PerYear.sql" />
+    <Build Include="evc\Views\viewApplicationSetting_Mentor.sql" />
+    <None Include="crm\Views\viewPaymentArrear_MNData.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_InvisibleInstitute.sql" />
+    <None Include="crm\Views\viewEmployer_MNData_All.sql" />
+    <Build Include="evc\Views\viewApplicationSetting_QualificationLevel.sql" />
+    <Build Include="stip\Views\viewDeclaration.sql" />
+    <Build Include="stip\Views\viewDeclaration_Partition.sql" />
+    <Build Include="sub\Views\viewReversalPayment_Declaration_Employee.sql" />
+    <Build Include="sub\Views\viewEmployer_Employee.sql" />
+    <Build Include="sub\Views\viewInstitute.sql" />
+    <Build Include="sub\Views\viewDeclaration_Partition_AmmountInPaymentRun.sql" />
+    <Build Include="sub\Views\viewDeclaration_TotalVoucherAmount.sql" />
+    <Build Include="sub\Views\viewMentor.sql" />
+    <Build Include="sub\Views\viewUserEmailEmployer.sql" />
+    <Build Include="hrs\Views\viewBPV.sql" />
+    <Build Include="hrs\Views\viewBPV_DTG.sql" />
+    <Build Include="osr\Views\viewDeclaration.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_DeclarationStatus.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_PathDeclarationAttachment.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_NewsItemType.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_RejectionReason.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_NewsItemPage.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_ThumbnailSize.sql" />
+    <Build Include="evc\Views\viewDeclaration.sql" />
+    <Build Include="sub\Views\viewDeclaration_TotalPaidAmount_2019.sql" />
+    <Build Include="sub\Views\zzviewEmployerBalance.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_SubsidyAmountPerType.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_DeclarationStatusGroup.sql" />
+    <Build Include="sub\Views\viewStatistics_Processed_Declarations.sql" />
+    <Build Include="sub\Views\viewStatistics_Processed_Declarations_2019.sql" />
+    <Build Include="evcwv\Views\viewApplicationSetting_Mentor.sql" />
+    <Build Include="evcwv\Views\viewDeclaration.sql" />
+    <None Include="crm\Views\viewEmployee_ScopeOfEmployment_MNData_All.sql" />
+    <Build Include="sub\Views\viewRepServ_Excel_Demo_20190318.sql" />
+    <Build Include="stip\Views\viewDeclaration_DynamicAmount.sql" />
+    <Build Include="osr\Views\viewDeclaration_Active_FirstPartition.sql" />
+    <Build Include="sub\Views\viewDeclaration_Institute.sql" />
+    <Build Include="sub\Views\viewEmployerBalance.sql" />
+    <Build Include="ait\Views\viewMonthNameLongByLanguage.sql" />
+    <Build Include="ait\Views\viewMonthNameByLanguage.sql" />
+    <Build Include="sub\Views\viewApplicationSetting_InvisibleCluster.sql" />
+    <None Include="Security\Role_OTIBDSReportingServices.sql" />
+    <Build Include="Security\AITHQ_jvanassenbergh.sql" />
+    <None Include="Security\AmbitionITMaurice.sql" />
+    <None Include="Security\OTIBSubsidie.sql" />
+    <None Include="Security\OTIBDSReportingServices.sql" />
+    <None Include="Security\RoleMemberships.sql" />
+    <Build Include="sub\Functions\usfCreateDateFromString.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sub\Functions\usfGetPartitionAmountCorrected.sql" />
+    <Build Include="sub\Functions\usfGetDeclarationStatusByPartition.sql" />
+    <Build Include="sub\Functions\usfDeclaration_SearchField.sql" />
+    <Build Include="sub\Functions\usfGetEmployerBalance.sql" />
+    <Build Include="sub\Functions\usfDateAdd.sql" />
+    <Build Include="sub\Functions\usfCreateSearchString.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="sub\Functions\usfFormatNumericString.sql" />
+    <Build Include="sub\Functions\usfGetPaymentLedger.sql" />
+    <Build Include="sub\Functions\usfCalculateUltimateDiplomaDate.sql" />
+    <Build Include="sub\Functions\usfConvertIntToRoman.sql" />
+    <Build Include="sub\Functions\usfGetEmployerBalanceAmount_Year.sql" />
+    <Build Include="sub\Functions\usfGetEmployerPaidAmount_Year.sql" />
+    <Build Include="eml\Functions\usfGetEmail_Body.sql" />
+    <Build Include="eml\Functions\usfGetEmail_Header.sql" />
+    <Build Include="sub\Functions\usfGetEndDeclarationPeriod.sql" />
+    <Build Include="ait\Functions\usf_WorkDays.sql" />
+    <Build Include="sub\Functions\usfGetActivePartitionByDeclaration.sql" />
+    <Build Include="ait\Functions\fcIsNumeric.sql" />
+    <Build Include="ait\Functions\fcAnonimize.sql" />
+    <Build Include="sub\Functions\usfConcatStrings.sql" />
+    <Build Include="dbo\Functions\fcIndexUsageFrom_Query_plan.sql" />
+    <Build Include="sub\Functions\utfGetDateDifferenceInYearsMonthsDays.sql" />
+    <Build Include="sub\Functions\zzutfGetDeclarationData.sql" />
+    <Build Include="sub\Functions\utfSplitString.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Permission_Add.sql" />
+    <Build Include="auth\Stored Procedures\uspLoginFailed_Get_ByLoginname.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_Upd_InternalMemo.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_Update.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_11_OSR_Payments.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Permission_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspLoginFailed_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Imp.sql" />
+    <Build Include="eml\Stored Procedures\uspEmail_Attachment_List.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Permission_Get.sql" />
+    <Build Include="eml\Stored Procedures\uspEmail_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_11_OSR_Payments_PerYear.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Permission_List.sql" />
+    <Build Include="eml\Stored Procedures\uspEmail_List_ToBeSent.sql" />
+    <Build Include="osr\Stored Procedures\uspEmployer_Get_Composition.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_AutomatedChecks.sql" />
+    <Build Include="eml\Stored Procedures\uspEmail_Upd_SentDateOnly.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_11_OSR_Payments_GetStandardParameterValues.sql" />
+    <Build Include="eml\Stored Procedures\uspEmailSetting_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Attachment_Export.sql" />
+    <Build Include="ait\Stored Procedures\uspCreateUpdUSP.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_11_OSR_Payments_GetSubsidyAmounts.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_02_DeclarationsFromHorus.sql" />
+    <Build Include="ait\Stored Procedures\uspCreateUpdTrigger.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_SendEmail_ReturnToEmployerByOTIB.sql" />
+    <Build Include="ait\Stored Procedures\uspCreateListUSP.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_03_DeclarationsFromHorusLive.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_05_DeclarationsBPVFromHorusLive.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Specification_Export.sql" />
+    <Build Include="ait\Stored Procedures\uspCreateGetUSP.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Search_Upd.sql" />
+    <Build Include="ait\Stored Procedures\uspCreateDelUSP.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Unknown_Source_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Attachment_Export.sql" />
+    <Build Include="ait\Stored Procedures\uspCreate_USP.sql" />
+    <Build Include="ait\Stored Procedures\uspExecutedProcedure_List.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_AutomatedChecks_Partition.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_BPV_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_SendEmail_ReturnToEmployer.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Upd_DiplomaDate.sql" />
+    <Build Include="hrs\Stored Procedures\uspBPV_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_ReturnToEmployer.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Get_ApprovedAmount.sql" />
+    <Build Include="stip\Stored Procedures\usp_OTIB_Declaration_Upd_Diploma_AcceptReject.sql" />
+    <Build Include="hrs\Stored Procedures\uspBPV_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspReProcessSpecifications.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_Export.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Employee_Imp_Rebuild_Index.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Upd_Termination.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusBPV_Imp_Rebuild_Index.sql" />
+    <Build Include="sub\Stored Procedures\uspEducation_Upd_NominalDuration.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_SubsidyYear_List.sql" />
+    <Build Include="ait\Stored Procedures\uspExecutedProcedure_Cleanup.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_06_DeclarationsEVC.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_Permission_Get_ActiveOnly.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Specification_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Investigation_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Investigation_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Investigation_List.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Investigation_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_ExportToFile.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_NewsItem_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_List_Employer.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationSetting_List.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_ParentChild_Request_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_List.sql" />
+    <Build Include="sub\Stored Procedures\uspWriteXMLFile.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_List_ActiveVouchers.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_Get.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_AutomatedChecks.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_List.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_XMLExport_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_List_All.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_Upd.sql" />
+    <Build Include="ait\Stored Procedures\uspWriteStringToFile.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_Get_All.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Attachment_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Password_Change_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Attachment_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Get_Summary.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Password_Change_Get_UserIDByToken.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Attachment_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Voucher_Del.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Unknown_Source_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Get_VoucherOverview.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Password_Change_Insert.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Attachment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Voucher_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Get_Summary.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Password_Change_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Voucher_List.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_Permission_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Voucher_Upd.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusContactPerson_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_09_STIP_Commitment_GetStandardParameterValues.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_ParentChild_Request_AcceptReject.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_ReversalPayment_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_SubsidyScheme_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_ExportToTable.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_SendEmail.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusIBAN_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_NewsItemPage_Del.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusEVC_Imp.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_AutomatedChecks_Partition.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_NewsItemPage_Add.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_09_STIP_Commitment_Snapshot_Details.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_AutomatedChecks_Declaration.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_SubsidyScheme_Add.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_09_STIP_Commitment_Snapshot_Get.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusContactPerson_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Upd_DeclarationStatus.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_SubsidyScheme_List.sql" />
+    <Build Include="ait\Stored Procedures\uspEmailAndIBANChange.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusEmployer_ParentChild_Imp.sql" />
+    <Build Include="ait\Stored Procedures\uspDevideByZero.sql" />
+    <Build Include="sub\Stored Procedures\uspInstitute_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_PaymentStop_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_NewsItemPage_List.sql" />
+    <Build Include="sub\Stored Procedures\uspJournalEntryCode_Get.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusVoucher_Imp.sql" />
+    <Build Include="evc\Stored Procedures\uspJournalEntryCode_Specification_Upd.sql" />
+    <Build Include="osr\Stored Procedures\uspJournalEntryCode_Specification_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_List.sql" />
+    <Build Include="stip\Stored Procedures\uspJournalEntryCode_Specification_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_PaymentRun_Declarations_List.sql" />
+    <Build Include="sub\Stored Procedures\uspJournalEntryCode_Specification_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_PaymentRun_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Attachment_Del.sql" />
+    <Build Include="ait\Stored Procedures\uspLog_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Attachment_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspLog_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_InternalMemo_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Attachment_List.sql" />
+    <Build Include="auth\Stored Procedures\usp_OTIB_User_Email_Change_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Upd_PartitionStatus.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Course_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspUserValidation_Upd.sql" />
+    <Build Include="ait\Stored Procedures\uspLog_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_CheckOnSync.sql" />
+    <Build Include="sub\Stored Procedures\uspCourse_List_Institute.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_PaymentStop_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Attachment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspCourse_Get.sql" />
+    <Build Include="auth\Stored Procedures\usp_OTIB_User_Email_Change_List.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Education_Upd.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusDeclaration2019_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_04_ParameterList_CompanySize.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Institute_Upd.sql" />
+    <Build Include="auth\Stored Procedures\usp_OTIB_User_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_List.sql" />
+    <None Include="sub\Stored Procedures\uspDeclaration_Employee_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_04_OSRYearInfo.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_Calculate.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_ParentChild_Request_Get_WithEmployerData.sql" />
+    <Build Include="sub\Stored Procedures\uspInstitute_List_Search.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_List.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_04_CompanyWithoutDeclaration.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Dashboard_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspCourse_IsEligible_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_List_InProcess.sql" />
+    <Build Include="auth\Stored Procedures\usp_OTIB_User_Email_Change_AcceptReject.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_List_Child.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_PaymentRunCandidates_Get.sql" />
+    <Build Include="auth\Stored Procedures\usp_OTIB_User_Email_Change_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspExactData_Import.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_List_Parent.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Get_WithEmployerData.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Employee_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Request_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Employee_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_ParentChild_Terminate.sql" />
+    <Build Include="auth\Stored Procedures\uspUserValidation_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspProcessErrorLog.sql" />
+    <Build Include="sub\Stored Procedures\uspUser_Role_Employer_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspUser_Role_Employer_List_WithEmployerData.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_History_List.sql" />
+    <Build Include="ait\Stored Procedures\FindMyUSP_String.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Get_WithEmployerNumber.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_SubsidyScheme_Add.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Unknown_Source_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Rejection_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_SubsidyScheme_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_PaymentRun_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Rejection_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspDropCreateFKs.sql" />
+    <Build Include="sub\Stored Procedures\uspCheckOnIBANChanges.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_Delete.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Rejection_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Rejection_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_SendEmail_ReturnToEmployer.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_Upd_ReturnToEmployer.sql" />
+    <Build Include="sub\Stored Procedures\uspEducation_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEducation_Institute_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_AutomatedChecks_Declaration.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_PaymentArrear_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_User_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Education_Institute_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_AutomatedChecks.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_CheckOnRunningEducation.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Get.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Get_ByLoginname.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_List.sql" />
+    <Build Include="stip\Stored Procedures\uspEmail_Partition_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_ByPageCode_List.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_User_Add.sql" />
+    <Build Include="hrs\Stored Procedures\uspSynchronizeDeclaration2018Data.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Get_WithEmployeeData.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_Specifications.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_Get_Extended.sql" />
+    <Build Include="auth\Stored Procedures\uspUserValidation_SendMail.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Get_WithEmployerData.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_CheckOnEndDeclarationPeriod.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_08_STIP_Commitment_Percentage.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Mentor_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_Get.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Get_TimeLine.sql" />
+    <Build Include="sub\Stored Procedures\uspCourse_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Del.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Mentor_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_List.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_08_STIP_Commitment_Detail.sql" />
+    <Build Include="stip\Stored Procedures\uspCalculateReferenceDates.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Get.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Mentor_List.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_ApplicationPage_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspInstitute_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Get_BPVdata.sql" />
+    <Build Include="stip\Stored Procedures\uspProcessReferenceDate.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_List.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Mentor_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_ApplicationPage_Del.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Get_Duplicates.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Unknown_Source_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_List.sql" />
+    <Build Include="ait\Stored Procedures\uspMaintenance_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspNewsItem_ApplicationPage_List.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Get_WithEmployeeData.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Unknown_Source_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEducation_List.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Upd.sql" />
+    <Build Include="ait\Stored Procedures\uspMaintenance_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_07_FinancialCommitments_DeclarationsPerMonth.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Get_WithEmployerData.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusEmployers_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclarationEmail_Attachment_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Declaration_Unknown_Source_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Unknown_Source_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspEmail_Partition_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspApplication_Del.sql" />
+    <Build Include="ait\Stored Procedures\uspMaintenance_List.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_ReversalPayment_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_07_FinancialCommitments_Summary.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Update.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclarationEmail_Attachment_Get.sql" />
+    <Build Include="stip\Stored Procedures\uspEmail_Partition_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspApplication_Get.sql" />
+    <Build Include="ait\Stored Procedures\uspMaintenance_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_ReversalPayment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_ReversalPayment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_07_ParameterList_SubsidyYear.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclarationEmail_Attachment_List.sql" />
+    <Build Include="stip\Stored Procedures\uspEmail_Partition_List_ByPartition.sql" />
+    <Build Include="auth\Stored Procedures\uspApplication_List.sql" />
+    <Build Include="ait\Stored Procedures\uspMaintenance_Check.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_ReversalPayment_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Get_SubsidiySchemeID.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclarationEmail_Attachment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_CONNECT_Declaration_Unknown_Source_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspEmail_Partition_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspApplication_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Specification_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_ReversalPayment_Delete.sql" />
+    <Build Include="stip\Stored Procedures\uspCalculateUltimateDiplomaDate.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_Get_WithEmployerData.sql" />
+    <Build Include="auth\Stored Procedures\uspCheckOnMembership.sql" />
+    <Build Include="stip\Stored Procedures\uspEmployee_ScopeOfEmployment_Check.sql" />
+    <Build Include="auth\Stored Procedures\uspPermission_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_Get_ForGracePeriod.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Employee_ReversalPayment_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEducation_NominalDuration_History_Process.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_Overview.sql" />
+    <Build Include="auth\Stored Procedures\uspPermission_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_GracePeriod_AcceptReject.sql" />
+    <Build Include="ait\Stored Procedures\FindMyColumnName.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Specification_List.sql" />
+    <None Include="sub\Stored Procedures\uspDeclaration_Employee_ReversalPayment_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_SyncHorusVoucher.sql" />
+    <Build Include="sub\Stored Procedures\uspMentor_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspPermission_List.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_GracePeriod_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_ReversalPayment_Update.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_07_SubsidyYear.sql" />
+    <Build Include="sub\Stored Procedures\uspMentor_List.sql" />
+    <Build Include="auth\Stored Procedures\uspPermission_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_GracePeriod_Get.sql" />
+    <Build Include="ait\Stored Procedures\FindMyData_String.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_Get_WithEmployeeData.sql" />
+    <Build Include="sub\Stored Procedures\uspMentor_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_GracePeriod_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_List_Payment.sql" />
+    <Build Include="ait\Stored Procedures\FindMyInteger_String.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_AutomatedChecks.sql" />
+    <Build Include="hrs\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_Update.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_Get.sql" />
+    <Build Include="eml\Stored Procedures\uspEmailTemplate_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_List_Payment_Export.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_IBAN_Change_Count.sql" />
+    <Build Include="hrs\Stored Procedures\uspSynchronizeVoucherData.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_List.sql" />
+    <Build Include="eml\Stored Procedures\uspEmailTemplate_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Role_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GraceApplyPeriod_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Extension_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Get_ForSendMail.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_List.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Extension_Get.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Get_WithEmployeeData.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_History_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_Upd.sql" />
+    <Build Include="stip\Stored Procedures\uspDeclaration_Delete.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Email_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Extension_List.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Get_WithEmployerData.sql" />
+    <Build Include="hrs\Stored Procedures\uspDeclaration_Partition_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_History_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Email_List_Outbox.sql" />
+    <Build Include="ait\Stored Procedures\uspDatabaseIntegrityCheck.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Email_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Extension_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_Declaration_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspUserLoginStatus_History_Del.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_Permission_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Email_List.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Get_ByUser.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Update.sql" />
+    <Build Include="ait\Stored Procedures\usp_SendEmail_ConnectService.sql" />
+    <Build Include="ait\Stored Procedures\uspCopyOSRDeclaration_AddVoucher.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Email_Upd.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Upd_ByUser.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Get.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_Upd_Email.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_Subsidy_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Employee_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_GetEmailRecipients.sql" />
+    <Build Include="sub\Stored Procedures\uspEncryptedSetting_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Employee_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEncryptedSetting_Upd.sql" />
+    <Build Include="hrs\Stored Procedures\uspPaymentRun_OSR2019_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_List_Employer.sql" />
+    <Build Include="his\Stored Procedures\uspHistory_List.sql" />
+    <Build Include="auth\Stored Procedures\uspRole_List_WithNrOfUsers.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_GracePeriod_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Unknown_Source_Upd_ByConnect.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Upd_DeclarationAmount.sql" />
+    <Build Include="auth\Stored Procedures\uspUser_List_AllActiveRoles.sql" />
+    <Build Include="his\Stored Procedures\uspHistory_Add.sql" />
+    <Build Include="eml\Stored Procedures\uspEmail_Upd_SendFailed.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployee_Upd.sql" />
+    <Build Include="hrs\Stored Procedures\uspHorusBPV_Imp.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Get.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_List.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentArrear_Imp.sql" />
+    <Build Include="osr\Stored Procedures\uspDeclaration_Del.sql" />
+    <Build Include="ait\Stored Procedures\uspResetSendToEtalage.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_Del.sql" />
+    <Build Include="ait\Stored Procedures\ResetDeclarationAutomaticCheck.sql" />
+    <Build Include="ait\Stored Procedures\uspExactData_Check.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_ParentChild_Request_SendEmail_ReturnToEmployer.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Attachment_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_ParentChild_Request_ReturnToEmployer.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Attachment_List.sql" />
+    <Build Include="evcwv\Stored Procedures\uspDeclaration_Participant_List.sql" />
+    <Build Include="ait\Stored Procedures\uspExecutedProcedure.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_ReversalPayment_Add.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Attachment_Get.sql" />
+    <Build Include="evcwv\Stored Procedures\uspParticipant_List.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Attachment_Del.sql" />
+    <Build Include="evcwv\Stored Procedures\uspParticipant_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspPaymentRun_Get.sql" />
+    <Build Include="evcwv\Stored Procedures\uspParticipant_Update.sql" />
+    <Build Include="evc\Stored Procedures\uspDeclaration_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_01_Declarations.sql" />
+    <Build Include="sub\Stored Procedures\uspSubsidyScheme_Institute_Add_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_Del.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_08_STIP_Commitment_GetStandardParameterValues.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_01_ParameterList_DeclarationStatus.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_Delete.sql" />
+    <Build Include="sub\Stored Procedures\uspUser_Role_Employer_Add.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_01_ParameterList_SubsidyScheme.sql" />
+    <Build Include="auth\Stored Procedures\uspLoginFailed_Add.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Employer_PaymentStop_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_RepServ_10_SubsidyUsagePerEmployer.sql" />
+    <Build Include="sub\Stored Procedures\uspUser_Role_Employer_List.sql" />
+    <Build Include="ait\Stored Procedures\uspAnonimizer.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_Upd.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_Upd_AcceptReject.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_List.sql" />
+    <Build Include="sub\Stored Procedures\uspDeclaration_Partition_Voucher_List.sql" />
+    <Build Include="ait\Stored Procedures\FindMyUSP_InJob.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_IBAN_Change_Upd.sql" />
+    <Build Include="sub\Stored Procedures\uspApplicationPage_Del.sql" />
+    <Build Include="sub\Stored Procedures\uspEmployer_Subsidy_Get.sql" />
+    <Build Include="sub\Stored Procedures\usp_OTIB_Declaration_Upd_Investigation.sql" />
+    <Build Include="sub\User Defined Types\uttSubsidySchemeID.sql" />
+    <Build Include="sub\User Defined Types\uttCourse.sql" />
+    <Build Include="sub\User Defined Types\uttEducation.sql" />
+    <Build Include="sub\User Defined Types\uttEmployee.sql" />
+    <Build Include="sub\User Defined Types\uttInstitute.sql" />
+    <Build Include="sub\User Defined Types\uttEducation_Institute.sql" />
+    <Build Include="stip\User Defined Types\uttReferenceDate.sql" />
+    <Build Include="stip\User Defined Types\uttUltimateDiplomaDate.sql" />
+    <Build Include="stip\User Defined Types\uttSnapshotDetailsPercentage.sql" />
+    <Build Include="sub\User Defined Types\uttGracePeriod_EmailToken.sql" />
+    <Build Include="Security\EncryptedSetting001.sql" />
+    <Build Include="Security\ait.sql" />
+    <Build Include="Security\auth.sql" />
+    <Build Include="Security\bpv.sql" />
+    <Build Include="Security\crm.sql" />
+    <Build Include="Security\eml.sql" />
+    <Build Include="Security\evc.sql" />
+    <Build Include="Security\evcwv.sql" />
+    <Build Include="Security\his.sql" />
+    <Build Include="Security\hrs.sql" />
+    <Build Include="Security\osr.sql" />
+    <Build Include="Security\stip.sql" />
+    <Build Include="Security\sub.sql" />
+    <Build Include="Security\SSN_Key_01.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\140\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+</Project>
