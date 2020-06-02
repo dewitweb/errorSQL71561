@@ -11,15 +11,12 @@ AS
 						CROSS JOIN N1 AS N2
 					)
 
-SELECT [langid]
-      ,[dateformat]
-      ,[datefirst]
-      ,[upgrade]
-      ,[name]
-      ,[alias]
-      ,[months]
-      ,[shortmonths]
-      ,[days]
-      ,[lcid]
-      ,[msglangid]
-  FROM master.sys.[syslanguages]
+SELECT 	l.langid,
+		l.name as languageName,
+		l.alias,
+		MonthNumber = ROW_NUMBER() OVER(PARTITION BY l.[langid] ORDER BY nMonthName.Number),
+		[MonthNameLong] = SUBSTRING(l.months, nMonthName.Number, CHARINDEX(',', l.months + ',', nMonthName.Number) - nMonthName.Number)
+FROM    master.sys.syslanguages l
+
+INNER JOIN Numbers AS nMonthName
+    ON (SUBSTRING(l.months, nMonthName.Number -1, 1) = ',' OR nMonthName.Number = 1)
