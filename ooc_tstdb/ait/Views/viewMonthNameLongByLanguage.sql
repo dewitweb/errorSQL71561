@@ -1,4 +1,4 @@
-﻿CREATE VIEW [ait].[viewMonthNameLongByLanguage]
+﻿CREATE VIEW dbo.[viewMonthNameLongByLanguage]
 AS
     WITH N1 AS 
 		(
@@ -11,11 +11,15 @@ AS
 						CROSS JOIN N1 AS N2
 					)
 
-SELECT  l.langid,
-		languageName = l.name,
-		l.alias,
-		MonthNumber = ROW_NUMBER() OVER(PARTITION BY l.[langid] ORDER BY nMonthName.Number),
-		[MonthNameLong] = SUBSTRING(l.months, nMonthName.Number, CHARINDEX(',', l.months + ',', nMonthName.Number) - nMonthName.Number)
-FROM    sys.syslanguages AS l
-INNER JOIN Numbers AS nMonthName
-    ON (SUBSTRING(l.months, nMonthName.Number -1, 1) = ',' OR nMonthName.Number = 1)
+SELECT [langid]
+      ,[dateformat]
+      ,[datefirst]
+      ,[upgrade]
+      ,[name]
+      ,[alias]
+      ,[months]
+      ,[shortmonths]
+      ,[days]
+      ,[lcid]
+      ,[msglangid]
+  FROM master.sys.[syslanguages]

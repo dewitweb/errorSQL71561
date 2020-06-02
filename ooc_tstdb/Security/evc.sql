@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [evc]
-    AUTHORIZATION [dbo];
-

@@ -1,12 +1,12 @@
-﻿CREATE VIEW [ait].[viewMonthNameByLanguage]
+﻿CREATE VIEW dbo.[viewMonthNameByLanguage]
 AS
-SELECT	l.langid,
-		l.languageName,
-		l.alias,
-		l.MonthNumber,
-		l.MonthNameLong,
+SELECT	k.langid,
+		k.languageName,
+		k.alias,
+		k.MonthNumber,
+		k.MonthNameLong,
 		s.MonthNameShort
-FROM	ait.viewMonthNameLongByLanguage l
-INNER JOIN	ait.viewMonthNameShortByLanguage s 
-		ON	s.langid = l.langid 
-		AND	s.MonthNumber = l.MonthNumber
+FROM	dbo.viewMonthNameLongByLanguage k
+INNER JOIN	dbo.viewMonthNameShortByLanguage s 
+		ON	s.langid = k.langid 
+		AND	s.MonthNumber = k.MonthNumber

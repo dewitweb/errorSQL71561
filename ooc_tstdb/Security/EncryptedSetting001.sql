@@ -1,4 +1,0 @@
-﻿CREATE CERTIFICATE [EncryptedSetting001]
-    AUTHORIZATION [dbo]
-    WITH SUBJECT = N'Encrypted Applicationsettings', START_DATE = N'2019-09-03T07:35:04', EXPIRY_DATE = N'2020-09-03T07:35:04';
-

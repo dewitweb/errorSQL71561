@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [bpv]
-    AUTHORIZATION [dbo];
-

@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [stip]
-    AUTHORIZATION [dbo];
-
